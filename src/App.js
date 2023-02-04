@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Document, Page, pdfjs } from "react-pdf";
 import testPdf from "./Eunice-igbinedion-resume.pdf";
-import './index.css'
+import "./index.css";
 
 // More examples here
 // https://github.com/wojtekmaj/react-pdf/wiki/Recipes
@@ -18,10 +18,20 @@ const App = () => {
   };
   return (
     <>
-      <div id="ResumeContainer">
-        <Document className={"PDFDocument"} width='200' file={testPdf} onLoadSuccess={onDocumentLoadSuccess}>
+      <div id="ResumeContainer" style={{ height: "585px" }}>
+        <Document
+          className={"PDFDocument"}
+          width="200"
+          file={testPdf}
+          height="585px"
+          onLoadSuccess={onDocumentLoadSuccess}
+        >
           {Array.from(new Array(numPages), (el, index) => (
-            <Page className={"PDFPage PDFPageOne"} key={`page_${index + 1}`} pageNumber={index + 1} />
+            <Page
+              className={"PDFPage PDFPageOne"}
+              key={`page_${index + 1}`}
+              pageNumber={index + 1}
+            />
           ))}
         </Document>
       </div>
