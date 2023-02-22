@@ -43,3 +43,9 @@ code {
   max-width: 100%;
   height: auto !important;
 }
+
+@media screen and (max-width: 540px) {
+}
+
+@media screen and (max-width: 420px) {
+}
